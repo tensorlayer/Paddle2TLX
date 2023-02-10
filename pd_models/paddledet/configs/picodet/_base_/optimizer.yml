@@ -1,0 +1,9 @@
+epoch: 1
+
+LearningRate:
+  base_lr: 0.32
+
+OptimizerBuilder:
+  optimizer:
+    momentum: 0.9
+    type: Momentum

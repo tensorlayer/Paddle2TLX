@@ -1,0 +1,11 @@
+_BASE_: [
+  '../datasets/coco_detection.yml',
+  '../runtime.yml',
+  '_base_/optimizer.yml',
+  '_base_/ssd_mobilenet_v1_300.yml',
+  '_base_/ssd_mobilenet_reader.yml',
+]
+weights: output/ssd_mobilenet_v1_300_120e_coco/model_final
+
+EvalReader:
+  collate_batch: false

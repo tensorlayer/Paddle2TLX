@@ -1,0 +1,8 @@
+epoch: 140
+
+LearningRate:
+  base_lr: 0.0005
+
+OptimizerBuilder:
+  optimizer:
+    type: Adam

@@ -1,1 +1,11 @@
-*.pyc
+.idea/
+.ipynb_checkpoints/
+*.egg-info/
+**/__pycache__/
+**/__pycache__/*.pyc
+
+# pretrained model file
+**/pretrain/
+**/pretrain/*.pdparams
+**/pretrain/*/
+**/pretrain/*/*.pdparams

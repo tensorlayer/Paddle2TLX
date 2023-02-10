@@ -1,0 +1,35 @@
+_BASE_: [
+  '../datasets/coco_detection.yml',
+  '../runtime.yml',
+  '_base_/picodet_v2.yml',
+  '_base_/optimizer.yml',
+  '_base_/picodet_320_reader.yml',
+]
+
+weights: output/picodet_l_320_coco/best_model
+epoch: 1
+
+LCNet:
+  scale: 2.0
+  feature_maps: [3, 4, 5]
+
+LCPAN:
+  out_channels: 160
+
+PicoHeadV2:
+  conv_feat:
+    name: PicoFeat
+    feat_in: 160
+    feat_out: 160
+    num_convs: 4
+    num_fpn_stride: 4
+    norm_type: bn
+    share_cls_reg: True
+    use_se: True
+  feat_in_chan: 160
+
+LearningRate:
+  base_lr: 0.12
+
+TrainReader:
+  batch_size: 2
